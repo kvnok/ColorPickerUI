@@ -1,27 +1,29 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #eb4034;
+    background-color: #88b1dc;
     color: #fff;
     margin: 0;
     padding-top: 20px;
 }
 
 .color-values-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
 }
 
 .hex-value, .rgb-value {
-    font-size: 24px;
+    font-size: 300%;
     font-weight: bold;
+	margin-top: 2vh;
 }
 
 .color-picker {
     display: flex;
     justify-content: center;
     flex-grow: 1;
+	margin-top: 6vh;
+}
+
+.hex-value {
+	text-align: right;
 }
