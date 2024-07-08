@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Picker</title>
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Color Picker</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="color-picker">
-        <input type="color" id="colorInput" value="#eb4034">
-        <div class="color-info">
-            <div class="color-box" id="colorBox" style="background-color: #eb4034;"></div>
-            <div class="color-values">
-                <p><strong>HEX:</strong> <span id="hexValue">#eb4034</span></p>
-                <p><strong>RGB:</strong> <span id="rgbValue">235, 64, 52</span></p>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+	<div class="color-values-top">
+		<div id="hexValue" class="hex-value">#eb4034</div>
+		<div class="color-picker">
+			<input type="color" id="colorInput" value="#eb4034">
+		</div>
+		<div id="rgbValue" class="rgb-value">235, 64, 52</div>
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>

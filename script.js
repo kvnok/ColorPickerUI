@@ -1,18 +1,30 @@
-document.getElementById('colorInput').addEventListener('input', function(event) {
-    const color = event.target.value;
-    document.getElementById('colorBox').style.backgroundColor = color;
-    document.getElementById('hexValue').textContent = color;
+document.addEventListener('DOMContentLoaded', function() {
+    const colorInput = document.getElementById('colorInput');
+    const hexValue = document.getElementById('hexValue');
+    const rgbValue = document.getElementById('rgbValue');
+    const body = document.body;
 
-    const rgb = hexToRgb(color);
+    colorInput.addEventListener('input', function() {
+        const color = colorInput.value;
+        body.style.backgroundColor = color; // Update body background color
+        hexValue.textContent = color;
+        rgbValue.textContent = hexToRgb(color).join(', ');
+    });
 
-    document.getElementById('rgbValue').textContent = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
-});
-function hexToRgb(hex) {
-    let r = 0, g = 0, b = 0;
-    if (hex.length == 7) {
-        r = parseInt(hex.slice(1, 3), 16);
-        g = parseInt(hex.slice(3, 5), 16);
-        b = parseInt(hex.slice(5, 7), 16);
+    function hexToRgb(hex) {
+        let r = 0, g = 0, b = 0;
+        // 3 digits
+        if (hex.length === 4) {
+            r = parseInt(hex[1] + hex[1], 16);
+            g = parseInt(hex[2] + hex[2], 16);
+            b = parseInt(hex[3] + hex[3], 16);
+        }
+        // 6 digits
+        else if (hex.length === 7) {
+            r = parseInt(hex[1] + hex[2], 16);
+            g = parseInt(hex[3] + hex[4], 16);
+            b = parseInt(hex[5] + hex[6], 16);
+        }
+        return [r, g, b];
     }
-    return { r, g, b };
-}
+});

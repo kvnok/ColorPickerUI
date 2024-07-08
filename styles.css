@@ -2,24 +2,36 @@ body {
     font-family: Arial, sans-serif;
     background-color: #333;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding-top: 20px; /* Add space for the top values */
+}
+
+.color-values-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Make the container fixed at the top */
+    width: 100%;
+    padding: 0 20px; /* Add some padding on the sides */
+}
+
+.hex-value, .rgb-value {
+    font-size: 24px; /* Larger font size for visibility */
+    font-weight: bold;
 }
 
 .color-picker {
-    background-color: #444;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Center the color picker without affecting its width */
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .color-info {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 60px; /* Push down to make space for the top values */
 }
 
 .color-box {
@@ -27,8 +39,4 @@ body {
     height: 50px;
     border: 2px solid #fff;
     margin-right: 20px;
-}
-
-.color-values p {
-    margin: 5px 0;
 }
